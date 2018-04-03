@@ -1,0 +1,7 @@
+local_homepage:
+    path:     /
+    defaults: { _controller: LocalBundle:Default:index }
+
+ajout_local:
+    path:     /ajout
+    defaults: { _controller: LocalBundle:Default:ajout }
