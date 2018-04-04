@@ -22,8 +22,8 @@ class LocalType extends AbstractType
             ->add('nomLocal')
             ->add('superficie')
             ->add('localisation')
-            ->add('lat',HiddenType::class)
-            ->add('lang',HiddenType::class)
+            ->add('lat')
+            ->add('lang')
 
             ->add('Ajouter',SubmitType::class);
 

@@ -10,6 +10,7 @@ class __TwigTemplate_8e23124ae7a1544aca7644ef9c86f00936705a039c546fdde47c7eb061a
         $this->parent = false;
 
         $this->blocks = array(
+            'script' => array($this, 'block_script'),
             'header' => array($this, 'block_header'),
             'body' => array($this, 'block_body'),
             'container' => array($this, 'block_container'),
@@ -19,11 +20,11 @@ class __TwigTemplate_8e23124ae7a1544aca7644ef9c86f00936705a039c546fdde47c7eb061a
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_3084725cf04c5e26d2628d2d75710d42df367f6798182bf1654643f00806b161 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_3084725cf04c5e26d2628d2d75710d42df367f6798182bf1654643f00806b161->enter($__internal_3084725cf04c5e26d2628d2d75710d42df367f6798182bf1654643f00806b161_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "Front.html.twig"));
+        $__internal_1a9d0fdcab5a39718ca9e70be174bf6b8bb85203351c20467bdfb469138ad212 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_1a9d0fdcab5a39718ca9e70be174bf6b8bb85203351c20467bdfb469138ad212->enter($__internal_1a9d0fdcab5a39718ca9e70be174bf6b8bb85203351c20467bdfb469138ad212_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "Front.html.twig"));
 
-        $__internal_3bd306c1b5ed626e6359df9e29f248e09ab7b1880766e07d53e02cf7b2ccdb65 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_3bd306c1b5ed626e6359df9e29f248e09ab7b1880766e07d53e02cf7b2ccdb65->enter($__internal_3bd306c1b5ed626e6359df9e29f248e09ab7b1880766e07d53e02cf7b2ccdb65_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "Front.html.twig"));
+        $__internal_a83f9cb0267843b4984876702c55e8ccbbf1be698eec84ae54a624b92f8e7015 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_a83f9cb0267843b4984876702c55e8ccbbf1be698eec84ae54a624b92f8e7015->enter($__internal_a83f9cb0267843b4984876702c55e8ccbbf1be698eec84ae54a624b92f8e7015_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "Front.html.twig"));
 
         // line 1
         echo "<!--
@@ -124,47 +125,74 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             });
         });
     </script>
+
+    ";
+        // line 70
+        $this->displayBlock('script', $context, $blocks);
+        // line 72
+        echo "
+
+
     <!--//End-rate-->
 </head>
 <body>
 <!--header-->
 ";
-        // line 73
+        // line 79
         $this->displayBlock('header', $context, $blocks);
-        // line 207
+        // line 218
         echo "<!--header-->
 <!--banner-->
 ";
-        // line 209
+        // line 220
         $this->displayBlock('body', $context, $blocks);
-        // line 470
+        // line 481
         echo "<!---footer--->
 ";
-        // line 471
+        // line 482
         $this->displayBlock('footer', $context, $blocks);
-        // line 529
+        // line 540
         echo "<!--copy-->
 
 </body>
 </html>";
         
-        $__internal_3084725cf04c5e26d2628d2d75710d42df367f6798182bf1654643f00806b161->leave($__internal_3084725cf04c5e26d2628d2d75710d42df367f6798182bf1654643f00806b161_prof);
+        $__internal_1a9d0fdcab5a39718ca9e70be174bf6b8bb85203351c20467bdfb469138ad212->leave($__internal_1a9d0fdcab5a39718ca9e70be174bf6b8bb85203351c20467bdfb469138ad212_prof);
 
         
-        $__internal_3bd306c1b5ed626e6359df9e29f248e09ab7b1880766e07d53e02cf7b2ccdb65->leave($__internal_3bd306c1b5ed626e6359df9e29f248e09ab7b1880766e07d53e02cf7b2ccdb65_prof);
+        $__internal_a83f9cb0267843b4984876702c55e8ccbbf1be698eec84ae54a624b92f8e7015->leave($__internal_a83f9cb0267843b4984876702c55e8ccbbf1be698eec84ae54a624b92f8e7015_prof);
 
     }
 
-    // line 73
+    // line 70
+    public function block_script($context, array $blocks = array())
+    {
+        $__internal_c476ac76d765dde5a223dfb38526a1b9706f590a1a03bcbe29075cac63cd741d = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_c476ac76d765dde5a223dfb38526a1b9706f590a1a03bcbe29075cac63cd741d->enter($__internal_c476ac76d765dde5a223dfb38526a1b9706f590a1a03bcbe29075cac63cd741d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "script"));
+
+        $__internal_ea2c6d10897c169de5a8dd4f800229599232480e5c6171cb7b2ee08e9b30c53d = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_ea2c6d10897c169de5a8dd4f800229599232480e5c6171cb7b2ee08e9b30c53d->enter($__internal_ea2c6d10897c169de5a8dd4f800229599232480e5c6171cb7b2ee08e9b30c53d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "script"));
+
+        // line 71
+        echo "    ";
+        
+        $__internal_ea2c6d10897c169de5a8dd4f800229599232480e5c6171cb7b2ee08e9b30c53d->leave($__internal_ea2c6d10897c169de5a8dd4f800229599232480e5c6171cb7b2ee08e9b30c53d_prof);
+
+        
+        $__internal_c476ac76d765dde5a223dfb38526a1b9706f590a1a03bcbe29075cac63cd741d->leave($__internal_c476ac76d765dde5a223dfb38526a1b9706f590a1a03bcbe29075cac63cd741d_prof);
+
+    }
+
+    // line 79
     public function block_header($context, array $blocks = array())
     {
-        $__internal_f43424b214cc9dcf9b8ffabb0ee93576c911f12408716cb552666daf34430f23 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_f43424b214cc9dcf9b8ffabb0ee93576c911f12408716cb552666daf34430f23->enter($__internal_f43424b214cc9dcf9b8ffabb0ee93576c911f12408716cb552666daf34430f23_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "header"));
+        $__internal_0cb4459bd1049775370e10c9e33cda27c74a36bb1eb18eaacd489f19c4ff68d6 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_0cb4459bd1049775370e10c9e33cda27c74a36bb1eb18eaacd489f19c4ff68d6->enter($__internal_0cb4459bd1049775370e10c9e33cda27c74a36bb1eb18eaacd489f19c4ff68d6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "header"));
 
-        $__internal_d17b3673c9364afdea7845e959ba909384c251372a5f6d69b4ec7a43c1bdb4d2 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_d17b3673c9364afdea7845e959ba909384c251372a5f6d69b4ec7a43c1bdb4d2->enter($__internal_d17b3673c9364afdea7845e959ba909384c251372a5f6d69b4ec7a43c1bdb4d2_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "header"));
+        $__internal_ec10af48dac31404316fc12de14f2e1267e3f3b587e602ccd5f2d741291f334b = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_ec10af48dac31404316fc12de14f2e1267e3f3b587e602ccd5f2d741291f334b->enter($__internal_ec10af48dac31404316fc12de14f2e1267e3f3b587e602ccd5f2d741291f334b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "header"));
 
-        // line 74
+        // line 80
         echo "    <div class=\"header\">
         <div class=\"header-top\">
             <div class=\"container\">
@@ -175,13 +203,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <ul>
                         <li><a href=\"checkout.html\">Checkout</a></li>
                         <li><a href=\"";
-        // line 83
+        // line 89
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("fos_user_registration_register");
         echo "\"> Create Account </a></li>
                         <li> ";
-        // line 84
+        // line 90
         if ($this->env->getExtension('Symfony\Bridge\Twig\Extension\SecurityExtension')->isGranted("IS_AUTHENTICATED_REMEMBERED")) {
-            // line 85
+            // line 91
             echo "                                <a href=\"";
             echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("fos_user_security_logout");
             echo "\">
@@ -189,14 +217,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 </a>
                             ";
         } else {
-            // line 89
+            // line 95
             echo "                                <a href=\"";
             echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("fos_user_security_login");
             echo "\">Login</a>
 
                             ";
         }
-        // line 92
+        // line 98
         echo "
                         </li>
                     </ul>
@@ -224,7 +252,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <div class=\"collapse navbar-collapse\" id=\"bs-megadropdown-tabs\">
                                 <ul class=\"nav navbar-nav\">
                                     <li class=\"active\"><a href=\"";
-        // line 118
+        // line 124
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("base_homepage");
         echo "\" class=\"act\">Home</a></li>
                                     <!-- Mega Menu -->
@@ -232,26 +260,28 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                         <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">Produit<b class=\"caret\"></b></a>
                                         <ul class=\"dropdown-menu multi-column columns-3\">
                                             <div class=\"row\">
-
+                                                <div class=\"col-sm-3  multi-gd-img\">
                                                     <ul class=\"multi-column-dropdown\">
-                                                        <h6>Les Articles</h6>
-                                                        <li><a href=\"";
-        // line 127
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("Vetement_homepage");
-        echo "\">Vetements</a></li>
-                                                        <li><a href=\"";
-        // line 128
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("base_homepage");
-        echo "\">Accesoires</a></li>
-                                                        <li><a href=\"";
-        // line 129
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("base_homepage");
-        echo "\">Produits Artisanale</a></li>
+                                                        <h6>categorie1</h6>
+                                                        <li><a href=\"#\">test yhez lel events</a></li>
 
                                                     </ul>
                                                 </div>
+                                                <div class=\"col-sm-3  multi-gd-img\">
+                                                    <ul class=\"multi-column-dropdown\">
+                                                        <h6>Submenu2</h6>
+                                                        <li><a href=\"#\">Sunglasses</a></li>
 
-
+                                                    </ul>
+                                                </div>
+                                                <div class=\"col-sm-3  multi-gd-img\">
+                                                    <a href=\"products.html\"><img src=\"images/woo.jpg\" alt=\" \"/></a>
+                                                </div>
+                                                <div class=\"col-sm-3  multi-gd-img\">
+                                                    <a href=\"products.html\"><img src=\"images/woo1.jpg\" alt=\" \"/></a>
+                                                </div>
+                                                <div class=\"clearfix\"></div>
+                                            </div>
                                         </ul>
                                     </li>
                                     <li class=\"dropdown\">
@@ -260,25 +290,33 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                             <div class=\"row\">
                                                 <div class=\"col-sm-3  multi-gd-img\">
                                                     <ul class=\"multi-column-dropdown\">
-                                                        <h6>Submenu1</h6>
-                                                        <li><a href=\"products.html\">Clothing</a></li>
-                                                        <li><a href=\"products.html\">Wallets</a></li>
-                                                        <li><a href=\"products.html\">Shoes</a></li>
-                                                        <li><a href=\"products.html\">Watches</a></li>
-                                                        <li><a href=\"products.html\"> Underwear </a></li>
-                                                        <li><a href=\"products.html\">Accessories</a></li>
-                                                    </ul>
+                                                        ";
+        // line 160
+        if ($this->env->getExtension('Symfony\Bridge\Twig\Extension\SecurityExtension')->isGranted("IS_AUTHENTICATED_REMEMBERED")) {
+            // line 161
+            echo "
+                                                        <a href=\"";
+            // line 162
+            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("all_local", array("id" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()), "id", array()))), "html", null, true);
+            echo "\">   <h6> Mes Locaux</h6> </a>
+                                                        ";
+        }
+        // line 164
+        echo "                                                    </ul>
                                                 </div>
                                                 <div class=\"col-sm-3  multi-gd-img\">
                                                     <ul class=\"multi-column-dropdown\">
-                                                        <h6>Submenu2</h6>
-                                                        <li><a href=\"products.html\">Sunglasses</a></li>
-                                                        <li><a href=\"products.html\">Wallets,Bags</a></li>
-                                                        <li><a href=\"products.html\">Footwear</a></li>
-                                                        <li><a href=\"products.html\">Watches</a></li>
-                                                        <li><a href=\"products.html\">Accessories</a></li>
-                                                        <li><a href=\"products.html\">Jewellery</a></li>
-                                                    </ul>
+                                                        ";
+        // line 168
+        if ($this->env->getExtension('Symfony\Bridge\Twig\Extension\SecurityExtension')->isGranted("IS_AUTHENTICATED_REMEMBERED")) {
+            // line 169
+            echo "                                                       <a href=\"";
+            echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("ajout_local");
+            echo "\">    <h6>Ajouter des  Locaux </h6></a>
+                                                        ";
+        }
+        // line 171
+        echo "                                                    </ul>
                                                 </div>
                                                 <div class=\"col-sm-3  multi-gd-img\">
                                                     <a href=\"products1.html\"><img src=\"images/woo3.jpg\" alt=\" \"/></a>
@@ -290,6 +328,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                             </div>
                                         </ul>
                                     </li>
+                                    <li><a href=\"#X\">Annonces</a></li>
                                     <li><a href=\"#X\">Evenements</a></li>
                                     <li><a href=\"mail.html\">Blog</a></li>
                                 </ul>
@@ -325,25 +364,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </div>
 ";
         
-        $__internal_d17b3673c9364afdea7845e959ba909384c251372a5f6d69b4ec7a43c1bdb4d2->leave($__internal_d17b3673c9364afdea7845e959ba909384c251372a5f6d69b4ec7a43c1bdb4d2_prof);
+        $__internal_ec10af48dac31404316fc12de14f2e1267e3f3b587e602ccd5f2d741291f334b->leave($__internal_ec10af48dac31404316fc12de14f2e1267e3f3b587e602ccd5f2d741291f334b_prof);
 
         
-        $__internal_f43424b214cc9dcf9b8ffabb0ee93576c911f12408716cb552666daf34430f23->leave($__internal_f43424b214cc9dcf9b8ffabb0ee93576c911f12408716cb552666daf34430f23_prof);
+        $__internal_0cb4459bd1049775370e10c9e33cda27c74a36bb1eb18eaacd489f19c4ff68d6->leave($__internal_0cb4459bd1049775370e10c9e33cda27c74a36bb1eb18eaacd489f19c4ff68d6_prof);
 
     }
 
-    // line 209
+    // line 220
     public function block_body($context, array $blocks = array())
     {
-        $__internal_9837c9e5482202376c5012d393a043a2b8b0d4a1cf49978d06a410a4d00ac578 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_9837c9e5482202376c5012d393a043a2b8b0d4a1cf49978d06a410a4d00ac578->enter($__internal_9837c9e5482202376c5012d393a043a2b8b0d4a1cf49978d06a410a4d00ac578_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_65233641fbe1b4669c54a3f4412200dcbbfc32946953562fb81b5b464121f515 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_65233641fbe1b4669c54a3f4412200dcbbfc32946953562fb81b5b464121f515->enter($__internal_65233641fbe1b4669c54a3f4412200dcbbfc32946953562fb81b5b464121f515_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        $__internal_050a9fe54c6306f3b370fd7ca82ebd86499ce423714f8d82ac8c5837871b5a62 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_050a9fe54c6306f3b370fd7ca82ebd86499ce423714f8d82ac8c5837871b5a62->enter($__internal_050a9fe54c6306f3b370fd7ca82ebd86499ce423714f8d82ac8c5837871b5a62_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_b60a9f5b62b3083dcff7588df5777febfb49b985d7ea88162d3af09c747a0000 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_b60a9f5b62b3083dcff7588df5777febfb49b985d7ea88162d3af09c747a0000->enter($__internal_b60a9f5b62b3083dcff7588df5777febfb49b985d7ea88162d3af09c747a0000_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        // line 210
+        // line 221
         $this->displayBlock('container', $context, $blocks);
-        // line 212
+        // line 223
         echo "
 
 
@@ -603,42 +642,42 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </div>
 ";
         
-        $__internal_050a9fe54c6306f3b370fd7ca82ebd86499ce423714f8d82ac8c5837871b5a62->leave($__internal_050a9fe54c6306f3b370fd7ca82ebd86499ce423714f8d82ac8c5837871b5a62_prof);
+        $__internal_b60a9f5b62b3083dcff7588df5777febfb49b985d7ea88162d3af09c747a0000->leave($__internal_b60a9f5b62b3083dcff7588df5777febfb49b985d7ea88162d3af09c747a0000_prof);
 
         
-        $__internal_9837c9e5482202376c5012d393a043a2b8b0d4a1cf49978d06a410a4d00ac578->leave($__internal_9837c9e5482202376c5012d393a043a2b8b0d4a1cf49978d06a410a4d00ac578_prof);
+        $__internal_65233641fbe1b4669c54a3f4412200dcbbfc32946953562fb81b5b464121f515->leave($__internal_65233641fbe1b4669c54a3f4412200dcbbfc32946953562fb81b5b464121f515_prof);
 
     }
 
-    // line 210
+    // line 221
     public function block_container($context, array $blocks = array())
     {
-        $__internal_c931577993aafab064ded987fce7253d6384a3a0ccaa065b64bf03a58cd88c0d = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_c931577993aafab064ded987fce7253d6384a3a0ccaa065b64bf03a58cd88c0d->enter($__internal_c931577993aafab064ded987fce7253d6384a3a0ccaa065b64bf03a58cd88c0d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "container"));
+        $__internal_04b2c78e97362f8c3dc259c11b5b1cf2d05767add7643d248fc35c9ea9777673 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_04b2c78e97362f8c3dc259c11b5b1cf2d05767add7643d248fc35c9ea9777673->enter($__internal_04b2c78e97362f8c3dc259c11b5b1cf2d05767add7643d248fc35c9ea9777673_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "container"));
 
-        $__internal_1d2f6acf8dbaeb946b763bb167be7d1f4779a69eb85ad472435cfa5bcc92ecce = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_1d2f6acf8dbaeb946b763bb167be7d1f4779a69eb85ad472435cfa5bcc92ecce->enter($__internal_1d2f6acf8dbaeb946b763bb167be7d1f4779a69eb85ad472435cfa5bcc92ecce_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "container"));
+        $__internal_1f0fb6ecec2fd2dbd624a2b3c3f8a143c813ad0e003a72c2ab083668ac19f929 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_1f0fb6ecec2fd2dbd624a2b3c3f8a143c813ad0e003a72c2ab083668ac19f929->enter($__internal_1f0fb6ecec2fd2dbd624a2b3c3f8a143c813ad0e003a72c2ab083668ac19f929_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "container"));
 
-        // line 211
+        // line 222
         echo " ";
         
-        $__internal_1d2f6acf8dbaeb946b763bb167be7d1f4779a69eb85ad472435cfa5bcc92ecce->leave($__internal_1d2f6acf8dbaeb946b763bb167be7d1f4779a69eb85ad472435cfa5bcc92ecce_prof);
+        $__internal_1f0fb6ecec2fd2dbd624a2b3c3f8a143c813ad0e003a72c2ab083668ac19f929->leave($__internal_1f0fb6ecec2fd2dbd624a2b3c3f8a143c813ad0e003a72c2ab083668ac19f929_prof);
 
         
-        $__internal_c931577993aafab064ded987fce7253d6384a3a0ccaa065b64bf03a58cd88c0d->leave($__internal_c931577993aafab064ded987fce7253d6384a3a0ccaa065b64bf03a58cd88c0d_prof);
+        $__internal_04b2c78e97362f8c3dc259c11b5b1cf2d05767add7643d248fc35c9ea9777673->leave($__internal_04b2c78e97362f8c3dc259c11b5b1cf2d05767add7643d248fc35c9ea9777673_prof);
 
     }
 
-    // line 471
+    // line 482
     public function block_footer($context, array $blocks = array())
     {
-        $__internal_7e9812c04fc875f52fcce9278a6adc4bd5ca1f814a55623089e430749ee1a62f = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_7e9812c04fc875f52fcce9278a6adc4bd5ca1f814a55623089e430749ee1a62f->enter($__internal_7e9812c04fc875f52fcce9278a6adc4bd5ca1f814a55623089e430749ee1a62f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "footer"));
+        $__internal_69b4083cd3cca3627b0daf840d246b02034346f951c0f40d63ce847c9e42c538 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_69b4083cd3cca3627b0daf840d246b02034346f951c0f40d63ce847c9e42c538->enter($__internal_69b4083cd3cca3627b0daf840d246b02034346f951c0f40d63ce847c9e42c538_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "footer"));
 
-        $__internal_4fd8e8d4cf26d49ca9f9a4a775a99afc414a4428a45701a3ce69182b9b1327ce = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_4fd8e8d4cf26d49ca9f9a4a775a99afc414a4428a45701a3ce69182b9b1327ce->enter($__internal_4fd8e8d4cf26d49ca9f9a4a775a99afc414a4428a45701a3ce69182b9b1327ce_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "footer"));
+        $__internal_b27ea3cd7cc274457366cf2e464bfda7626046e2ab8042ab649e077d32bdabc4 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_b27ea3cd7cc274457366cf2e464bfda7626046e2ab8042ab649e077d32bdabc4->enter($__internal_b27ea3cd7cc274457366cf2e464bfda7626046e2ab8042ab649e077d32bdabc4_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "footer"));
 
-        // line 472
+        // line 483
         echo "    <div class=\"footer-w3l\">
         <div class=\"container\">
             <div class=\"footer-grids\">
@@ -697,10 +736,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </div>
 ";
         
-        $__internal_4fd8e8d4cf26d49ca9f9a4a775a99afc414a4428a45701a3ce69182b9b1327ce->leave($__internal_4fd8e8d4cf26d49ca9f9a4a775a99afc414a4428a45701a3ce69182b9b1327ce_prof);
+        $__internal_b27ea3cd7cc274457366cf2e464bfda7626046e2ab8042ab649e077d32bdabc4->leave($__internal_b27ea3cd7cc274457366cf2e464bfda7626046e2ab8042ab649e077d32bdabc4_prof);
 
         
-        $__internal_7e9812c04fc875f52fcce9278a6adc4bd5ca1f814a55623089e430749ee1a62f->leave($__internal_7e9812c04fc875f52fcce9278a6adc4bd5ca1f814a55623089e430749ee1a62f_prof);
+        $__internal_69b4083cd3cca3627b0daf840d246b02034346f951c0f40d63ce847c9e42c538->leave($__internal_69b4083cd3cca3627b0daf840d246b02034346f951c0f40d63ce847c9e42c538_prof);
 
     }
 
@@ -716,7 +755,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
     public function getDebugInfo()
     {
-        return array (  642 => 472,  633 => 471,  623 => 211,  614 => 210,  347 => 212,  345 => 210,  336 => 209,  248 => 129,  244 => 128,  240 => 127,  228 => 118,  200 => 92,  193 => 89,  185 => 85,  183 => 84,  179 => 83,  168 => 74,  159 => 73,  146 => 529,  144 => 471,  141 => 470,  139 => 209,  135 => 207,  133 => 73,  104 => 47,  100 => 46,  94 => 43,  89 => 41,  73 => 28,  68 => 26,  61 => 22,  51 => 15,  47 => 14,  43 => 13,  29 => 1,);
+        return array (  681 => 483,  672 => 482,  662 => 222,  653 => 221,  386 => 223,  384 => 221,  375 => 220,  319 => 171,  313 => 169,  311 => 168,  305 => 164,  300 => 162,  297 => 161,  295 => 160,  256 => 124,  228 => 98,  221 => 95,  213 => 91,  211 => 90,  207 => 89,  196 => 80,  187 => 79,  177 => 71,  168 => 70,  155 => 540,  153 => 482,  150 => 481,  148 => 220,  144 => 218,  142 => 79,  133 => 72,  131 => 70,  105 => 47,  101 => 46,  95 => 43,  90 => 41,  74 => 28,  69 => 26,  62 => 22,  52 => 15,  48 => 14,  44 => 13,  30 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -797,6 +836,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             });
         });
     </script>
+
+    {%  block script %}
+    {% endblock %}
+
+
+
     <!--//End-rate-->
 </head>
 <body>
@@ -852,17 +897,28 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                         <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">Produit<b class=\"caret\"></b></a>
                                         <ul class=\"dropdown-menu multi-column columns-3\">
                                             <div class=\"row\">
-
+                                                <div class=\"col-sm-3  multi-gd-img\">
                                                     <ul class=\"multi-column-dropdown\">
-                                                        <h6>Les Articles</h6>
-                                                        <li><a href=\"{{ path('Vetement_homepage') }}\">Vetements</a></li>
-                                                        <li><a href=\"{{ path('base_homepage') }}\">Accesoires</a></li>
-                                                        <li><a href=\"{{ path('base_homepage') }}\">Produits Artisanale</a></li>
+                                                        <h6>categorie1</h6>
+                                                        <li><a href=\"#\">test yhez lel events</a></li>
 
                                                     </ul>
                                                 </div>
+                                                <div class=\"col-sm-3  multi-gd-img\">
+                                                    <ul class=\"multi-column-dropdown\">
+                                                        <h6>Submenu2</h6>
+                                                        <li><a href=\"#\">Sunglasses</a></li>
 
-
+                                                    </ul>
+                                                </div>
+                                                <div class=\"col-sm-3  multi-gd-img\">
+                                                    <a href=\"products.html\"><img src=\"images/woo.jpg\" alt=\" \"/></a>
+                                                </div>
+                                                <div class=\"col-sm-3  multi-gd-img\">
+                                                    <a href=\"products.html\"><img src=\"images/woo1.jpg\" alt=\" \"/></a>
+                                                </div>
+                                                <div class=\"clearfix\"></div>
+                                            </div>
                                         </ul>
                                     </li>
                                     <li class=\"dropdown\">
@@ -871,24 +927,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                             <div class=\"row\">
                                                 <div class=\"col-sm-3  multi-gd-img\">
                                                     <ul class=\"multi-column-dropdown\">
-                                                        <h6>Submenu1</h6>
-                                                        <li><a href=\"products.html\">Clothing</a></li>
-                                                        <li><a href=\"products.html\">Wallets</a></li>
-                                                        <li><a href=\"products.html\">Shoes</a></li>
-                                                        <li><a href=\"products.html\">Watches</a></li>
-                                                        <li><a href=\"products.html\"> Underwear </a></li>
-                                                        <li><a href=\"products.html\">Accessories</a></li>
+                                                        {% if is_granted(\"IS_AUTHENTICATED_REMEMBERED\") %}
+
+                                                        <a href=\"{{ path('all_local',{'id':app.user.id}) }}\">   <h6> Mes Locaux</h6> </a>
+                                                        {% endif %}
                                                     </ul>
                                                 </div>
                                                 <div class=\"col-sm-3  multi-gd-img\">
                                                     <ul class=\"multi-column-dropdown\">
-                                                        <h6>Submenu2</h6>
-                                                        <li><a href=\"products.html\">Sunglasses</a></li>
-                                                        <li><a href=\"products.html\">Wallets,Bags</a></li>
-                                                        <li><a href=\"products.html\">Footwear</a></li>
-                                                        <li><a href=\"products.html\">Watches</a></li>
-                                                        <li><a href=\"products.html\">Accessories</a></li>
-                                                        <li><a href=\"products.html\">Jewellery</a></li>
+                                                        {% if is_granted(\"IS_AUTHENTICATED_REMEMBERED\") %}
+                                                       <a href=\"{{ path('ajout_local') }}\">    <h6>Ajouter des  Locaux </h6></a>
+                                                        {% endif %}
                                                     </ul>
                                                 </div>
                                                 <div class=\"col-sm-3  multi-gd-img\">
@@ -901,6 +950,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                             </div>
                                         </ul>
                                     </li>
+                                    <li><a href=\"#X\">Annonces</a></li>
                                     <li><a href=\"#X\">Evenements</a></li>
                                     <li><a href=\"mail.html\">Blog</a></li>
                                 </ul>

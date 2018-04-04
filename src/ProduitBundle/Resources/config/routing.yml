@@ -2,7 +2,18 @@ produit_homepage:
     path:     /
     defaults: { _controller: ProduitBundle:Default:index }
 
+tout_produit:
+    path:     /produits{ref}
+    defaults: { _controller: ProduitBundle:Default:produits }
 
-Vetement_homepage:
-    path:     /vetement
-    defaults: { _controller: ProduitBundle:Produit:Vetement }
+ajout_produit:
+    path:     /add
+    defaults: { _controller: ProduitBundle:Default:add }
+
+valide:
+    path:     /add/valide
+    defaults: { _controller: ProduitBundle:Default:valide }
+
+affichage:
+    path:     /afficher
+    defaults: { _controller: ProduitBundle:Default:afficherProduit }

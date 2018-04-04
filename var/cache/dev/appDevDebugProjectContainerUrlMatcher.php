@@ -112,70 +112,10 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array (  '_controller' => 'ProduitBundle\\Controller\\DefaultController::indexAction',  '_route' => 'produit_homepage',);
         }
 
-        // Vetement_homepage
-        if ('/vetement' === $pathinfo) {
-            return array (  '_controller' => 'ProduitBundle\\Controller\\ProduitController::VetementAction',  '_route' => 'Vetement_homepage',);
+        // tout_produit
+        if (0 === strpos($pathinfo, '/produits') && preg_match('#^/produits(?P<ref>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'tout_produit')), array (  '_controller' => 'ProduitBundle\\Controller\\DefaultController::produitsAction',));
         }
-
-        // local_homepage
-        if ('' === $trimmedPathinfo) {
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($rawPathinfo.'/', 'local_homepage');
-            }
-
-            return array (  '_controller' => 'LocalBundle\\Controller\\DefaultController::indexAction',  '_route' => 'local_homepage',);
-        }
-
-        // ajout_local
-        if ('/ajout' === $pathinfo) {
-            return array (  '_controller' => 'LocalBundle\\Controller\\DefaultController::ajoutAction',  '_route' => 'ajout_local',);
-        }
-
-        // dashbord
-        if ('/admin' === $pathinfo) {
-            return array (  '_controller' => 'BaseBundle\\Controller\\DefaultController::dashAction',  '_route' => 'dashbord',);
-        }
-
-        // base_homepage
-        if ('/index' === $pathinfo) {
-            return array (  '_controller' => 'BaseBundle\\Controller\\DefaultController::indexAction',  '_route' => 'base_homepage',);
-        }
-
-        if (0 === strpos($pathinfo, '/login')) {
-            // fos_user_security_login
-            if ('/login' === $pathinfo) {
-                if (!in_array($canonicalMethod, array('GET', 'POST'))) {
-                    $allow = array_merge($allow, array('GET', 'POST'));
-                    goto not_fos_user_security_login;
-                }
-
-                return array (  '_controller' => 'fos_user.security.controller:loginAction',  '_route' => 'fos_user_security_login',);
-            }
-            not_fos_user_security_login:
-
-            // fos_user_security_check
-            if ('/login_check' === $pathinfo) {
-                if ('POST' !== $canonicalMethod) {
-                    $allow[] = 'POST';
-                    goto not_fos_user_security_check;
-                }
-
-                return array (  '_controller' => 'fos_user.security.controller:checkAction',  '_route' => 'fos_user_security_check',);
-            }
-            not_fos_user_security_check:
-
-        }
-
-        // fos_user_security_logout
-        if ('/logout' === $pathinfo) {
-            if (!in_array($canonicalMethod, array('GET', 'POST'))) {
-                $allow = array_merge($allow, array('GET', 'POST'));
-                goto not_fos_user_security_logout;
-            }
-
-            return array (  '_controller' => 'fos_user.security.controller:logoutAction',  '_route' => 'fos_user_security_logout',);
-        }
-        not_fos_user_security_logout:
 
         if (0 === strpos($pathinfo, '/profile')) {
             // fos_user_profile_show
@@ -217,7 +157,114 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
-        elseif (0 === strpos($pathinfo, '/register')) {
+        elseif (0 === strpos($pathinfo, '/a')) {
+            if (0 === strpos($pathinfo, '/add')) {
+                // ajout_produit
+                if ('/add' === $pathinfo) {
+                    return array (  '_controller' => 'ProduitBundle\\Controller\\DefaultController::addAction',  '_route' => 'ajout_produit',);
+                }
+
+                // valide
+                if ('/add/valide' === $pathinfo) {
+                    return array (  '_controller' => 'ProduitBundle\\Controller\\DefaultController::valideAction',  '_route' => 'valide',);
+                }
+
+            }
+
+            // dashbord
+            if ('/admin' === $pathinfo) {
+                return array (  '_controller' => 'BaseBundle\\Controller\\DefaultController::dashAction',  '_route' => 'dashbord',);
+            }
+
+            // affichage
+            if ('/afficher' === $pathinfo) {
+                return array (  '_controller' => 'ProduitBundle\\Controller\\DefaultController::afficherProduitAction',  '_route' => 'affichage',);
+            }
+
+            if (0 === strpos($pathinfo, '/ajout')) {
+                // ajout_local
+                if ('/ajout' === $pathinfo) {
+                    return array (  '_controller' => 'LocalBundle\\Controller\\DefaultController::ajoutAction',  '_route' => 'ajout_local',);
+                }
+
+                // succes
+                if ('/ajout/succes' === $pathinfo) {
+                    return array (  '_controller' => 'LocalBundle\\Controller\\DefaultController::succesAction',  '_route' => 'succes',);
+                }
+
+            }
+
+        }
+
+        // local_homepage
+        if ('' === $trimmedPathinfo) {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($rawPathinfo.'/', 'local_homepage');
+            }
+
+            return array (  '_controller' => 'LocalBundle\\Controller\\DefaultController::indexAction',  '_route' => 'local_homepage',);
+        }
+
+        if (0 === strpos($pathinfo, '/lo')) {
+            // all_local
+            if (0 === strpos($pathinfo, '/locaux') && preg_match('#^/locaux(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'all_local')), array (  '_controller' => 'LocalBundle\\Controller\\DefaultController::locauxAction',));
+            }
+
+            // delete_local
+            if (0 === strpos($pathinfo, '/loacaux/delete') && preg_match('#^/loacaux/delete(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'delete_local')), array (  '_controller' => 'LocalBundle\\Controller\\DefaultController::deleteAction',));
+            }
+
+            if (0 === strpos($pathinfo, '/login')) {
+                // fos_user_security_login
+                if ('/login' === $pathinfo) {
+                    if (!in_array($canonicalMethod, array('GET', 'POST'))) {
+                        $allow = array_merge($allow, array('GET', 'POST'));
+                        goto not_fos_user_security_login;
+                    }
+
+                    return array (  '_controller' => 'fos_user.security.controller:loginAction',  '_route' => 'fos_user_security_login',);
+                }
+                not_fos_user_security_login:
+
+                // fos_user_security_check
+                if ('/login_check' === $pathinfo) {
+                    if ('POST' !== $canonicalMethod) {
+                        $allow[] = 'POST';
+                        goto not_fos_user_security_check;
+                    }
+
+                    return array (  '_controller' => 'fos_user.security.controller:checkAction',  '_route' => 'fos_user_security_check',);
+                }
+                not_fos_user_security_check:
+
+            }
+
+            // fos_user_security_logout
+            if ('/logout' === $pathinfo) {
+                if (!in_array($canonicalMethod, array('GET', 'POST'))) {
+                    $allow = array_merge($allow, array('GET', 'POST'));
+                    goto not_fos_user_security_logout;
+                }
+
+                return array (  '_controller' => 'fos_user.security.controller:logoutAction',  '_route' => 'fos_user_security_logout',);
+            }
+            not_fos_user_security_logout:
+
+        }
+
+        // modifier_local
+        if (0 === strpos($pathinfo, '/modifier') && preg_match('#^/modifier(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'modifier_local')), array (  '_controller' => 'LocalBundle\\Controller\\DefaultController::modifierAction',));
+        }
+
+        // base_homepage
+        if ('/index' === $pathinfo) {
+            return array (  '_controller' => 'BaseBundle\\Controller\\DefaultController::indexAction',  '_route' => 'base_homepage',);
+        }
+
+        if (0 === strpos($pathinfo, '/register')) {
             // fos_user_registration_register
             if ('/register' === $trimmedPathinfo) {
                 if (!in_array($canonicalMethod, array('GET', 'POST'))) {

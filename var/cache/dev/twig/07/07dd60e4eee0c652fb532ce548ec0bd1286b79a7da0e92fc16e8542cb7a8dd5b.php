@@ -15,11 +15,11 @@ class __TwigTemplate_5079ce74593c5b0279b3b5f461cc420181d0419358c523c28c4460b69b1
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_d6ff128623b7e0a8e0f025ffb2c29c8d429479995a2711c8acb417f60d1c7d8d = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_d6ff128623b7e0a8e0f025ffb2c29c8d429479995a2711c8acb417f60d1c7d8d->enter($__internal_d6ff128623b7e0a8e0f025ffb2c29c8d429479995a2711c8acb417f60d1c7d8d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@FOSUser/Registration/register_content.html.twig"));
+        $__internal_3df0f302fe751398653500724178d04cae9fd5d3a77b0f9610ec200c02e091eb = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_3df0f302fe751398653500724178d04cae9fd5d3a77b0f9610ec200c02e091eb->enter($__internal_3df0f302fe751398653500724178d04cae9fd5d3a77b0f9610ec200c02e091eb_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@FOSUser/Registration/register_content.html.twig"));
 
-        $__internal_151526c262bcb394ad34ccaeb24bc996376aa1d7cd0bd174887b71cc065acb0e = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_151526c262bcb394ad34ccaeb24bc996376aa1d7cd0bd174887b71cc065acb0e->enter($__internal_151526c262bcb394ad34ccaeb24bc996376aa1d7cd0bd174887b71cc065acb0e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@FOSUser/Registration/register_content.html.twig"));
+        $__internal_09d510a9146614ac2e568cc6332f49051c8d407fe2963b67c4678ec8656a1aba = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_09d510a9146614ac2e568cc6332f49051c8d407fe2963b67c4678ec8656a1aba->enter($__internal_09d510a9146614ac2e568cc6332f49051c8d407fe2963b67c4678ec8656a1aba_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@FOSUser/Registration/register_content.html.twig"));
 
         // line 2
         echo "
@@ -79,8 +79,14 @@ class __TwigTemplate_5079ce74593c5b0279b3b5f461cc420181d0419358c523c28c4460b69b1
         echo "</p>
                         <div class=\"clearfix\"></div>
                     </div>
-                    <input type=\"submit\"   value=\"";
-        // line 35
+
+                <div class=\"key\">
+                    <i class=\"fa fa-lock\" aria-hidden=\"true\"></i>
+                    <div class=\"clearfix\"></div>
+                </div>
+
+                <input type=\"submit\"   value=\"";
+        // line 41
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("registration.submit", array(), "FOSUserBundle"), "html", null, true);
         echo "\">
 
@@ -92,15 +98,15 @@ class __TwigTemplate_5079ce74593c5b0279b3b5f461cc420181d0419358c523c28c4460b69b1
 </div>
 
 ";
-        // line 44
+        // line 50
         echo         $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_end');
         echo "
 ";
         
-        $__internal_d6ff128623b7e0a8e0f025ffb2c29c8d429479995a2711c8acb417f60d1c7d8d->leave($__internal_d6ff128623b7e0a8e0f025ffb2c29c8d429479995a2711c8acb417f60d1c7d8d_prof);
+        $__internal_3df0f302fe751398653500724178d04cae9fd5d3a77b0f9610ec200c02e091eb->leave($__internal_3df0f302fe751398653500724178d04cae9fd5d3a77b0f9610ec200c02e091eb_prof);
 
         
-        $__internal_151526c262bcb394ad34ccaeb24bc996376aa1d7cd0bd174887b71cc065acb0e->leave($__internal_151526c262bcb394ad34ccaeb24bc996376aa1d7cd0bd174887b71cc065acb0e_prof);
+        $__internal_09d510a9146614ac2e568cc6332f49051c8d407fe2963b67c4678ec8656a1aba->leave($__internal_09d510a9146614ac2e568cc6332f49051c8d407fe2963b67c4678ec8656a1aba_prof);
 
     }
 
@@ -116,7 +122,7 @@ class __TwigTemplate_5079ce74593c5b0279b3b5f461cc420181d0419358c523c28c4460b69b1
 
     public function getDebugInfo()
     {
-        return array (  96 => 44,  84 => 35,  78 => 32,  70 => 27,  62 => 22,  58 => 21,  50 => 16,  46 => 15,  32 => 4,  28 => 3,  25 => 2,);
+        return array (  102 => 50,  90 => 41,  78 => 32,  70 => 27,  62 => 22,  58 => 21,  50 => 16,  46 => 15,  32 => 4,  28 => 3,  25 => 2,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -163,7 +169,13 @@ class __TwigTemplate_5079ce74593c5b0279b3b5f461cc420181d0419358c523c28c4460b69b1
                         {{ form_widget(form.plainPassword.second, {'attr': {'placeholder': 'Répéter mot de passe','class':'form-control placeholder-no-fix','required' : 'true'}}) }}</p>
                         <div class=\"clearfix\"></div>
                     </div>
-                    <input type=\"submit\"   value=\"{{ 'registration.submit'|trans }}\">
+
+                <div class=\"key\">
+                    <i class=\"fa fa-lock\" aria-hidden=\"true\"></i>
+                    <div class=\"clearfix\"></div>
+                </div>
+
+                <input type=\"submit\"   value=\"{{ 'registration.submit'|trans }}\">
 
             </div>
 

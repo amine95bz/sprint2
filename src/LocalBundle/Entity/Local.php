@@ -19,35 +19,35 @@ class Local
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $idLocal;
+    public $idLocal;
 
     /**
      * @var string
      *
      * @ORM\Column(name="description", type="string", length=50, nullable=false)
      */
-    private $description;
+    public $description;
 
     /**
      * @var string
      *
      * @ORM\Column(name="nom_local", type="string", length=10, nullable=false)
      */
-    private $nomLocal;
+    public $nomLocal;
 
     /**
      * @var float
      *
      * @ORM\Column(name="superficie", type="float", precision=10, scale=0, nullable=false)
      */
-    private $superficie;
+    public $superficie;
 
     /**
      * @var string
      *
      * @ORM\Column(name="localisation", type="string", length=20, nullable=false)
      */
-    private $localisation;
+    public $localisation;
 
     /**
      * @var string
@@ -79,6 +79,22 @@ class Local
      * @ORM\JoinColumn(name="prop", referencedColumnName="id")
      */
     private $prop;
+
+    /**
+     * @return mixed
+     */
+    public function getProp()
+    {
+        return $this->prop;
+    }
+
+    /**
+     * @param mixed $prop
+     */
+    public function setProp($prop)
+    {
+        $this->prop = $prop;
+    }
 
 
 

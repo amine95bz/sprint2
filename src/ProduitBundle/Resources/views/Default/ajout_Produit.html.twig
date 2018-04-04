@@ -1,0 +1,58 @@
+{% extends 'Front.html.twig' %}
+{% block container %}
+
+
+    <h3>Ajouter Produit</h3>
+    <ol class="breadcrumb">
+        <li><a href="{{ path('base_homepage') }}">Home</a></li>
+        <li class="active" >Ajouter Produit</li>
+
+    </ol>
+
+
+
+            {{ form_start(Form) }}
+
+            <div class="key" >
+                <i class="fa fa-keyboard-o" aria-hidden="true"></i>
+                {{ form_widget(Form.nomp, {'attr': {'placeholder': 'Nom Produit','class':'form-control placeholder-no-fix','required' : 'true'}}) }}
+                <div class="clearfix"></div>
+            </div>
+            <div class="key">
+                <i class="fa fa-clipboard" aria-hidden="true"></i>
+                {{ form_widget(Form.prix, {'attr': {'placeholder': 'Prix','class':'form-control placeholder-no-fix','required' : 'true'}}) }}
+                <div class="clearfix"></div>
+            </div>
+            <div class="key">
+                <i class="fa fa-sort-numeric-asc" aria-hidden="true"></i>
+                {{ form_widget(Form.img, {'attr': {'placeholder': 'Image','class':'form-control placeholder-no-fix','required' : 'true'}}) }}
+
+                <div class="clearfix"></div>
+            </div>
+            <div class="key">
+                <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                {{ form_widget(Form.quantit, {'attr': {'placeholder': 'quantité','class':'form-control placeholder-no-fix','required' : 'true'}}) }}
+
+
+                <div class="clearfix"></div>
+            </div>
+
+            <div class="key">
+                <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                {{ form_widget(Form.descrip, {'attr': {'placeholder': 'Description','class':'form-control placeholder-no-fix','required' : 'true'}}) }}
+
+
+                <div class="clearfix"></div>
+            </div>
+
+
+
+                <div class="clearfix"></div>
+
+
+
+    {{ form_end(Form) }}
+
+
+
+{% endblock %}

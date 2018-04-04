@@ -1,9 +1,6 @@
 <?php
-
 namespace ProduitBundle\Entity;
-
 use Doctrine\ORM\Mapping as ORM;
-
 /**
  * Produit
  *
@@ -22,54 +19,62 @@ class Produit
     private $ref;
 
     /**
+     * @return int
+     */
+    public function getRef()
+    {
+        return $this->ref;
+    }
+
+    /**
+     * @param int $ref
+     */
+    public function setRef($ref)
+    {
+        $this->ref = $ref;
+    }
+    /**
      * @var string
      *
      * @ORM\Column(name="nomP", type="string", length=10, nullable=false)
      */
     private $nomp;
-
     /**
      * @var float
      *
      * @ORM\Column(name="prix", type="float", precision=10, scale=0, nullable=false)
      */
     private $prix;
-
     /**
      * @var string
      *
      * @ORM\Column(name="img", type="string", length=255, nullable=false)
      */
     private $img;
-
     /**
      * @var integer
      *
      * @ORM\Column(name="quantit", type="integer", nullable=false)
      */
     private $quantit = '1';
-
     /**
      * @var string
      *
      * @ORM\Column(name="descrip", type="string", length=255, nullable=false)
      */
     private $descrip;
-
     /**
      * @var string
      *
      * @ORM\Column(name="nomV", type="string", length=20, nullable=false)
      */
     private $nomv;
-
     /**
      * Many Features have One Modele.
      * @ORM\ManyToOne(targetEntity="BaseBundle\Entity\User")
      * @ORM\JoinColumn(name="prop", referencedColumnName="id")
      */
     private $prop;
-
     /**
      * @return string
      */
@@ -77,7 +82,6 @@ class Produit
     {
         return $this->nomp;
     }
-
     /**
      * @param string $nomp
      */
@@ -85,7 +89,6 @@ class Produit
     {
         $this->nomp = $nomp;
     }
-
     /**
      * @return float
      */
@@ -93,7 +96,6 @@ class Produit
     {
         return $this->prix;
     }
-
     /**
      * @param float $prix
      */
@@ -101,7 +103,6 @@ class Produit
     {
         $this->prix = $prix;
     }
-
     /**
      * @return string
      */
@@ -109,7 +110,6 @@ class Produit
     {
         return $this->img;
     }
-
     /**
      * @param string $img
      */
@@ -117,7 +117,6 @@ class Produit
     {
         $this->img = $img;
     }
-
     /**
      * @return int
      */
@@ -125,7 +124,6 @@ class Produit
     {
         return $this->quantit;
     }
-
     /**
      * @param int $quantit
      */
@@ -133,7 +131,6 @@ class Produit
     {
         $this->quantit = $quantit;
     }
-
     /**
      * @return string
      */
@@ -141,7 +138,6 @@ class Produit
     {
         return $this->descrip;
     }
-
     /**
      * @param string $descrip
      */
@@ -149,7 +145,6 @@ class Produit
     {
         $this->descrip = $descrip;
     }
-
     /**
      * @return string
      */
@@ -157,7 +152,6 @@ class Produit
     {
         return $this->nomv;
     }
-
     /**
      * @param string $nomv
      */
@@ -165,7 +159,6 @@ class Produit
     {
         $this->nomv = $nomv;
     }
-
     /**
      * @return mixed
      */
@@ -173,7 +166,6 @@ class Produit
     {
         return $this->prop;
     }
-
     /**
      * @param mixed $prop
      */
@@ -181,7 +173,4 @@ class Produit
     {
         $this->prop = $prop;
     }
-
-
 }
-
