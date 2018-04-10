@@ -45,6 +45,14 @@ class Produit
      * @ORM\Column(name="prix", type="float", precision=10, scale=0, nullable=false)
      */
     private $prix;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="type", type="string", length=20, nullable=false)
+     */
+    private $type;
+
     /**
      * @var string
      *
@@ -66,7 +74,7 @@ class Produit
     /**
      * @var string
      *
-     * @ORM\Column(name="nomV", type="string", length=20, nullable=false)
+     * @ORM\Column(name="nomV", type="string", length=20, nullable=true)
      */
     private $nomv;
     /**
@@ -81,6 +89,22 @@ class Produit
     public function getNomp()
     {
         return $this->nomp;
+    }
+
+    /**
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * @param string $type
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
     }
     /**
      * @param string $nomp

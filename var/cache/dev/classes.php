@@ -5364,11 +5364,11 @@ namespace
 {
 class Twig_Environment
 {
-const VERSION ='1.35.0';
-const VERSION_ID = 13500;
+const VERSION ='1.35.3';
+const VERSION_ID = 13503;
 const MAJOR_VERSION = 1;
 const MINOR_VERSION = 35;
-const RELEASE_VERSION = 0;
+const RELEASE_VERSION = 3;
 const EXTRA_VERSION ='';
 protected $charset;
 protected $loader;
@@ -5426,12 +5426,12 @@ $this->addExtension(new Twig_Extension_Optimizer($options['optimizations']));
 $this->staging = new Twig_Extension_Staging();
 if (is_string($this->originalCache)) {
 $r = new ReflectionMethod($this,'writeCacheFile');
-if ($r->getDeclaringClass()->getName() !== __CLASS__) {
+if (__CLASS__ !== $r->getDeclaringClass()->getName()) {
 @trigger_error('The Twig_Environment::writeCacheFile method is deprecated since version 1.22 and will be removed in Twig 2.0.', E_USER_DEPRECATED);
 $this->bcWriteCacheFile = true;
 }
 $r = new ReflectionMethod($this,'getCacheFilename');
-if ($r->getDeclaringClass()->getName() !== __CLASS__) {
+if (__CLASS__ !== $r->getDeclaringClass()->getName()) {
 @trigger_error('The Twig_Environment::getCacheFilename method is deprecated since version 1.22 and will be removed in Twig 2.0.', E_USER_DEPRECATED);
 $this->bcGetCacheFilename = true;
 }
@@ -5637,6 +5637,9 @@ $names = array($names);
 }
 foreach ($names as $name) {
 if ($name instanceof Twig_Template) {
+return $name;
+}
+if ($name instanceof Twig_TemplateWrapper) {
 return $name;
 }
 try {
@@ -6617,7 +6620,7 @@ $item = $item->getIterator();
 }
 if ($start >= 0 && $length >= 0 && $item instanceof Iterator) {
 try {
-return iterator_to_array(new LimitIterator($item, $start, $length === null ? -1 : $length), $preserveKeys);
+return iterator_to_array(new LimitIterator($item, $start, null === $length ? -1 : $length), $preserveKeys);
 } catch (OutOfBoundsException $exception) {
 return array();
 }
@@ -6920,10 +6923,10 @@ static $entityMap = array(
 );
 $chr = $matches[0];
 $ord = ord($chr);
-if (($ord <= 0x1f && $chr !="\t"&& $chr !="\n"&& $chr !="\r") || ($ord >= 0x7f && $ord <= 0x9f)) {
+if (($ord <= 0x1f &&"\t"!= $chr &&"\n"!= $chr &&"\r"!= $chr) || ($ord >= 0x7f && $ord <= 0x9f)) {
 return'&#xFFFD;';
 }
-if (strlen($chr) == 1) {
+if (1 == strlen($chr)) {
 $hex = strtoupper(substr('00'.bin2hex($chr), -2));
 } else {
 $chr = twig_convert_encoding($chr,'UTF-16BE','UTF-8');
@@ -6944,11 +6947,17 @@ return 0;
 if (is_scalar($thing)) {
 return mb_strlen($thing, $env->getCharset());
 }
+if ($thing instanceof \SimpleXMLElement) {
+return count($thing);
+}
 if (is_object($thing) && method_exists($thing,'__toString') && !$thing instanceof \Countable) {
 return mb_strlen((string) $thing, $env->getCharset());
 }
 if ($thing instanceof \Countable || is_array($thing)) {
 return count($thing);
+}
+if ($thing instanceof \IteratorAggregate) {
+return iterator_count($thing);
 }
 return 1;
 }
@@ -6990,11 +6999,17 @@ return 0;
 if (is_scalar($thing)) {
 return strlen($thing);
 }
+if ($thing instanceof \SimpleXMLElement) {
+return count($thing);
+}
 if (is_object($thing) && method_exists($thing,'__toString') && !$thing instanceof \Countable) {
 return strlen((string) $thing);
 }
 if ($thing instanceof \Countable || is_array($thing)) {
 return count($thing);
+}
+if ($thing instanceof \IteratorAggregate) {
+return iterator_count($thing);
 }
 return 1;
 }
@@ -7528,6 +7543,8 @@ return;
 }
 if (null === $object) {
 $message = sprintf('Impossible to invoke a method ("%s") on a null variable.', $item);
+} elseif (is_array($object)) {
+$message = sprintf('Impossible to invoke a method ("%s") on an array.', $item);
 } else {
 $message = sprintf('Impossible to invoke a method ("%s") on a %s variable ("%s").', $item, gettype($object), $object);
 }
@@ -7627,7 +7644,7 @@ $message .= sprintf(' Use "block("%s"%s) is defined" instead).', $arguments[0], 
 $message .= sprintf(' Use include("%s") instead).', $object->getTemplateName());
 }
 @trigger_error($message, E_USER_DEPRECATED);
-return $ret ===''?'': new Twig_Markup($ret, $this->env->getCharset());
+return''=== $ret ?'': new Twig_Markup($ret, $this->env->getCharset());
 }
 return $ret;
 }

@@ -1,0 +1,79 @@
+{% extends 'Front.html.twig' %}
+
+{% block body %}
+    <style>
+        #divDetailEvent{
+            text-align: center;
+            min-height: 100px;
+            background-size:cover;
+            padding: 10em 0;
+            height: 100px;
+            width: 1680px;
+            display: table;
+            background: url("{{ asset('images/back.jpg') }}") no-repeat fixed 0px 0px;
+        }
+    </style>
+
+    <div class="content">
+        <!--single-->
+        <div class="single-wl3">
+            <div class="container">
+                <div class="single-grids">
+                    <div class="col-md-9 single-grid">
+                        <div class="single-top">
+                            <div class="single-left">
+                                <div class="flexslider">
+                                    <ul class="slides">
+                                        <li data-thumb="images/si.jpg">
+                                            <div class="thumb-image"> <img src="{{ asset('ProduitImages/'~ produit.img) }}" data-imagezoom="true" class="img-responsive"> </div>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="single-right simpleCart_shelfItem">
+                                <h4>{{ produit.nomp }}</h4>
+                                <br>
+                                <div class="block">
+                                    <div class="starbox small ghosting"> </div>
+                                </div>
+                                <br>
+                                <div class="description">
+                                    <p><span>Description : </span> {{ produit.descrip }}</p>
+                                </div>
+                                <div class="description">
+                                    <p><span>Quantié : </span> {{ produit.quantit }}</p>
+                                </div>
+
+                                <div class="description">
+                                    <p><span>Type : </span> {{ produit.type }}</p>
+                                </div>
+
+                                <p class="price item_price">{{ produit.prix }}dt</p>
+                                <div class="women">
+                                    <span class="size"> </span>
+
+                                        <a href="" data-text="Modifier" class="my-cart-b item_add">Ajouter Au panier</a>
+
+
+
+                                </div>
+
+
+                            </div>
+
+                            <div class="clearfix"> </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+    <!--single-->
+
+{% endblock %}

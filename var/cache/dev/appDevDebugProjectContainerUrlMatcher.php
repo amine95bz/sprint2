@@ -112,48 +112,69 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array (  '_controller' => 'ProduitBundle\\Controller\\DefaultController::indexAction',  '_route' => 'produit_homepage',);
         }
 
-        // tout_produit
-        if (0 === strpos($pathinfo, '/produits') && preg_match('#^/produits(?P<ref>[^/]++)$#s', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'tout_produit')), array (  '_controller' => 'ProduitBundle\\Controller\\DefaultController::produitsAction',));
-        }
-
-        if (0 === strpos($pathinfo, '/profile')) {
-            // fos_user_profile_show
-            if ('/profile' === $trimmedPathinfo) {
-                if ('GET' !== $canonicalMethod) {
-                    $allow[] = 'GET';
-                    goto not_fos_user_profile_show;
+        if (0 === strpos($pathinfo, '/p')) {
+            if (0 === strpos($pathinfo, '/produits')) {
+                // tout_produit
+                if ('/produits' === $pathinfo) {
+                    return array (  '_controller' => 'ProduitBundle\\Controller\\DefaultController::produitsAction',  '_route' => 'tout_produit',);
                 }
 
-                if (substr($pathinfo, -1) !== '/') {
-                    return $this->redirect($rawPathinfo.'/', 'fos_user_profile_show');
+                // sup_produit
+                if (0 === strpos($pathinfo, '/produits/sup') && preg_match('#^/produits/sup(?P<ref>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'sup_produit')), array (  '_controller' => 'ProduitBundle\\Controller\\DefaultController::supAction',));
                 }
 
-                return array (  '_controller' => 'fos_user.profile.controller:showAction',  '_route' => 'fos_user_profile_show',);
             }
-            not_fos_user_profile_show:
 
-            // fos_user_profile_edit
-            if ('/profile/edit' === $pathinfo) {
-                if (!in_array($canonicalMethod, array('GET', 'POST'))) {
-                    $allow = array_merge($allow, array('GET', 'POST'));
-                    goto not_fos_user_profile_edit;
+            elseif (0 === strpos($pathinfo, '/profile')) {
+                // fos_user_profile_show
+                if ('/profile' === $trimmedPathinfo) {
+                    if ('GET' !== $canonicalMethod) {
+                        $allow[] = 'GET';
+                        goto not_fos_user_profile_show;
+                    }
+
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($rawPathinfo.'/', 'fos_user_profile_show');
+                    }
+
+                    return array (  '_controller' => 'fos_user.profile.controller:showAction',  '_route' => 'fos_user_profile_show',);
                 }
+                not_fos_user_profile_show:
 
-                return array (  '_controller' => 'fos_user.profile.controller:editAction',  '_route' => 'fos_user_profile_edit',);
-            }
-            not_fos_user_profile_edit:
+                // fos_user_profile_edit
+                if ('/profile/edit' === $pathinfo) {
+                    if (!in_array($canonicalMethod, array('GET', 'POST'))) {
+                        $allow = array_merge($allow, array('GET', 'POST'));
+                        goto not_fos_user_profile_edit;
+                    }
 
-            // fos_user_change_password
-            if ('/profile/change-password' === $pathinfo) {
-                if (!in_array($canonicalMethod, array('GET', 'POST'))) {
-                    $allow = array_merge($allow, array('GET', 'POST'));
-                    goto not_fos_user_change_password;
+                    return array (  '_controller' => 'fos_user.profile.controller:editAction',  '_route' => 'fos_user_profile_edit',);
                 }
+                not_fos_user_profile_edit:
 
-                return array (  '_controller' => 'fos_user.change_password.controller:changePasswordAction',  '_route' => 'fos_user_change_password',);
+                // fos_user_change_password
+                if ('/profile/change-password' === $pathinfo) {
+                    if (!in_array($canonicalMethod, array('GET', 'POST'))) {
+                        $allow = array_merge($allow, array('GET', 'POST'));
+                        goto not_fos_user_change_password;
+                    }
+
+                    return array (  '_controller' => 'fos_user.change_password.controller:changePasswordAction',  '_route' => 'fos_user_change_password',);
+                }
+                not_fos_user_change_password:
+
             }
-            not_fos_user_change_password:
+
+            // payment_produit
+            if ('/payment' === $pathinfo) {
+                return array (  '_controller' => 'ProduitBundle\\Controller\\DefaultController::paymentAction',  '_route' => 'payment_produit',);
+            }
+
+            // pdfProduit
+            if ('/pdfProduit' === $pathinfo) {
+                return array (  '_controller' => 'ProduitBundle\\Controller\\DefaultController::pdfProdAction',  '_route' => 'pdfProduit',);
+            }
 
         }
 
@@ -181,6 +202,21 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return array (  '_controller' => 'ProduitBundle\\Controller\\DefaultController::afficherProduitAction',  '_route' => 'affichage',);
             }
 
+            // accessoire
+            if ('/acc' === $pathinfo) {
+                return array (  '_controller' => 'ProduitBundle\\Controller\\DefaultController::accessoireAction',  '_route' => 'accessoire',);
+            }
+
+            // alimentation
+            if ('/ali' === $pathinfo) {
+                return array (  '_controller' => 'ProduitBundle\\Controller\\DefaultController::alimentAction',  '_route' => 'alimentation',);
+            }
+
+            // autreProduit
+            if ('/autre' === $pathinfo) {
+                return array (  '_controller' => 'ProduitBundle\\Controller\\DefaultController::otherAction',  '_route' => 'autreProduit',);
+            }
+
             if (0 === strpos($pathinfo, '/ajout')) {
                 // ajout_local
                 if ('/ajout' === $pathinfo) {
@@ -194,6 +230,29 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
             }
 
+        }
+
+        elseif (0 === strpos($pathinfo, '/modif')) {
+            // modifier_produit
+            if (preg_match('#^/modif(?P<ref>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'modifier_produit')), array (  '_controller' => 'ProduitBundle\\Controller\\DefaultController::modifierProduitAction',));
+            }
+
+            // modifier_local
+            if (0 === strpos($pathinfo, '/modifier') && preg_match('#^/modifier(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'modifier_local')), array (  '_controller' => 'LocalBundle\\Controller\\DefaultController::modifierAction',));
+            }
+
+        }
+
+        // vetement
+        if ('/vet' === $pathinfo) {
+            return array (  '_controller' => 'ProduitBundle\\Controller\\DefaultController::vetementAction',  '_route' => 'vetement',);
+        }
+
+        // detailProduit
+        if ('/detailProd' === $pathinfo) {
+            return array (  '_controller' => 'ProduitBundle\\Controller\\DefaultController::detailProdAction',  '_route' => 'detailProduit',);
         }
 
         // local_homepage
@@ -252,11 +311,6 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             }
             not_fos_user_security_logout:
 
-        }
-
-        // modifier_local
-        if (0 === strpos($pathinfo, '/modifier') && preg_match('#^/modifier(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'modifier_local')), array (  '_controller' => 'LocalBundle\\Controller\\DefaultController::modifierAction',));
         }
 
         // base_homepage

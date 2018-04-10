@@ -19,6 +19,10 @@ class AppKernel extends Kernel
             new BaseBundle\BaseBundle(),
             new LocalBundle\LocalBundle(),
             new ProduitBundle\ProduitBundle(),
+            new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
+            new Mgilet\NotificationBundle\MgiletNotificationBundle(),
+            new Knp\Bundle\SnappyBundle\KnpSnappyBundle(),
+
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

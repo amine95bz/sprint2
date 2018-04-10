@@ -3,7 +3,7 @@ produit_homepage:
     defaults: { _controller: ProduitBundle:Default:index }
 
 tout_produit:
-    path:     /produits{ref}
+    path:     /produits
     defaults: { _controller: ProduitBundle:Default:produits }
 
 ajout_produit:
@@ -17,3 +17,42 @@ valide:
 affichage:
     path:     /afficher
     defaults: { _controller: ProduitBundle:Default:afficherProduit }
+
+payment_produit:
+    path:     /payment
+    defaults: { _controller: ProduitBundle:Default:payment }
+
+sup_produit:
+    path:     /produits/sup{ref}
+    defaults: { _controller: ProduitBundle:Default:sup }
+
+modifier_produit:
+    path:     /modif{ref}
+    defaults: { _controller: ProduitBundle:Default:modifierProduit }
+
+vetement:
+    path:     /vet
+    defaults: { _controller: ProduitBundle:Default:vetement }
+
+accessoire:
+    path:     /acc
+    defaults: { _controller: ProduitBundle:Default:accessoire }
+
+alimentation:
+    path:     /ali
+    defaults: { _controller: ProduitBundle:Default:aliment }
+
+autreProduit:
+    path:     /autre
+    defaults: { _controller: ProduitBundle:Default:other }
+
+detailProduit:
+    path:     /detailProd
+    defaults: { _controller: ProduitBundle:Default:detailProd }
+pdfProduit:
+    path:     /pdfProduit
+    defaults: { _controller: ProduitBundle:Default:pdfProd }
+
+
+
+

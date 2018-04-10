@@ -26,6 +26,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script src="{{ asset('js/main.js') }}"></script>
     <!--search jQuery-->
     <script src="{{ asset('js/responsiveslides.min.js') }}"></script>
+
+
+
+
+<!-- Paiement stripe Amine -->
+
+
+    <script src="https://js.stripe.com/v3/"></script>
+
+
+
+
+
+
+
     <script>
         $(function () {
             $("#slider").responsiveSlides({
@@ -69,6 +84,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
     {%  block script %}
     {% endblock %}
+
+
+
+
+
+
+
+
+
 
 
 
@@ -126,27 +150,26 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     <li class="dropdown">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Produit<b class="caret"></b></a>
                                         <ul class="dropdown-menu multi-column columns-3">
-                                            <div class="row">
+                                            <div class="row" align="center">
                                                 <div class="col-sm-3  multi-gd-img">
                                                     <ul class="multi-column-dropdown">
-                                                        <h6>categorie1</h6>
-                                                        <li><a href="#">test yhez lel events</a></li>
+                                                        <h6>Choice</h6>
+                                                        <li><a href="{{ path('affichage') }}">Available products</a></li>
+                                                        <li><a href="{{ path('tout_produit') }}">My products</a></li>
 
                                                     </ul>
                                                 </div>
                                                 <div class="col-sm-3  multi-gd-img">
                                                     <ul class="multi-column-dropdown">
-                                                        <h6>Submenu2</h6>
-                                                        <li><a href="#">Sunglasses</a></li>
+                                                        <h6>Articles</h6>
+                                                        <li><a href="{{ path('vetement') }}">Clothing</a></li>
+                                                        <li><a href="{{ path('accessoire') }}">Accessories</a></li>
+                                                        <li><a href="{{ path('alimentation') }}">Food</a></li>
+                                                        <li><a href="{{ path('autreProduit') }}">Others</a></li>
 
                                                     </ul>
                                                 </div>
-                                                <div class="col-sm-3  multi-gd-img">
-                                                    <a href="products.html"><img src="images/woo.jpg" alt=" "/></a>
-                                                </div>
-                                                <div class="col-sm-3  multi-gd-img">
-                                                    <a href="products.html"><img src="images/woo1.jpg" alt=" "/></a>
-                                                </div>
+
                                                 <div class="clearfix"></div>
                                             </div>
                                         </ul>
