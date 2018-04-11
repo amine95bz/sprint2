@@ -2,6 +2,14 @@ produit_homepage:
     path:     /
     defaults: { _controller: ProduitBundle:Default:index }
 
+Adminaff:
+    path:     /afficheadmine
+    defaults: { _controller: ProduitBundle:Default:admin }
+
+supAdmin:
+    path:     /produits/sup{ref}
+    defaults: { _controller: ProduitBundle:Default:supAdmin }
+
 tout_produit:
     path:     /produits
     defaults: { _controller: ProduitBundle:Default:produits }
@@ -13,6 +21,10 @@ ajout_produit:
 valide:
     path:     /add/valide
     defaults: { _controller: ProduitBundle:Default:valide }
+
+validePaeiment:
+    path:     /payment/valide
+    defaults: { _controller: ProduitBundle:Default:valideP }
 
 affichage:
     path:     /afficher
@@ -49,6 +61,7 @@ autreProduit:
 detailProduit:
     path:     /detailProd
     defaults: { _controller: ProduitBundle:Default:detailProd }
+
 pdfProduit:
     path:     /pdfProduit
     defaults: { _controller: ProduitBundle:Default:pdfProd }

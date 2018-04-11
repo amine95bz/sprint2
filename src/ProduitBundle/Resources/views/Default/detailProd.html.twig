@@ -25,7 +25,7 @@
                                 <div class="flexslider">
                                     <ul class="slides">
                                         <li data-thumb="images/si.jpg">
-                                            <div class="thumb-image"> <img src="{{ asset('ProduitImages/'~ produit.img) }}" data-imagezoom="true" class="img-responsive"> </div>
+                                            <div class="thumb-image"> <img src="{{ asset('uploads/images/'~ produit.img) }}" data-imagezoom="true" class="img-responsive"> </div>
                                         </li>
 
                                     </ul>
@@ -47,6 +47,10 @@
 
                                 <div class="description">
                                     <p><span>Type : </span> {{ produit.type }}</p>
+                                </div>
+
+                                <div class="description">
+                                    <p><span>Vendeur : </span> {{ produit.prop }}</p>
                                 </div>
 
                                 <p class="price item_price">{{ produit.prix }}dt</p>

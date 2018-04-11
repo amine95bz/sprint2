@@ -37,7 +37,9 @@
 
 {#</script>#}
 
-
+    <div class="login">
+    <div class="main-agileits">
+    <div class="form-w3agile form1">
 <br>
     <h3>Ajouter Produit</h3>
     <br>
@@ -57,18 +59,18 @@
                 <div class="clearfix"></div>
             </div>
             <div >
-                <i class="fa fa-clipboard" aria-hidden="true"></i>
+                <i class="fa fa-keyboard-o" aria-hidden="true"></i>
                 {{ form_widget(Form.prix, {'attr': {'placeholder': 'Prix','class':'form-control placeholder-no-fix','required' : 'true'}}) }}
                 <div class="clearfix"></div>
             </div>
             <div >
-                <i class="fa fa-sort-numeric-asc" aria-hidden="true"></i>
+                <i class="fa fa-file-picture-o" aria-hidden="true"></i>
                 {{ form_widget(Form.img, {'attr': {'placeholder': 'Image','class':'form-control placeholder-no-fix','required' : 'true'}}) }}
 
                 <div class="clearfix"></div>
             </div>
             <div >
-                <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                <i class="fa fa-sort-numeric-asc" aria-hidden="true"></i>
                 {{ form_widget(Form.quantit, {'attr': {'placeholder': 'quantité','class':'form-control placeholder-no-fix','required' : 'true'}}) }}
 
 
@@ -76,7 +78,7 @@
             </div>
 
             <div>
-                <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                <i class="fa fa-clipboard" aria-hidden="true"></i>
                 {{ form_widget(Form.descrip, {'attr': {'placeholder': 'Description','class':'form-control placeholder-no-fix','required' : 'true'}}) }}
 
 
@@ -84,14 +86,13 @@
             </div>
 
     <div >
-        <i class="fa fa-paper-plane" aria-hidden="true"></i>
+        <i class="fa fa-keyboard-o" aria-hidden="true"></i>
         {{ form_widget(Form.type, {'attr': {'placeholder': 'Type','class':'form-control placeholder-no-fix','required' : 'true'}}) }}
 
 
         <div class="clearfix"></div>
     </div>
-
-
+<br>
 
                 <div class="clearfix"></div>
 
@@ -99,6 +100,6 @@
 
     {{ form_end(Form) }}
 
-
+    </div></div></div>
 
 {% endblock %}

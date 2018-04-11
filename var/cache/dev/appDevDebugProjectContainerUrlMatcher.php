@@ -112,8 +112,72 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array (  '_controller' => 'ProduitBundle\\Controller\\DefaultController::indexAction',  '_route' => 'produit_homepage',);
         }
 
-        if (0 === strpos($pathinfo, '/p')) {
+        if (0 === strpos($pathinfo, '/a')) {
+            // Adminaff
+            if ('/afficheadmine' === $pathinfo) {
+                return array (  '_controller' => 'ProduitBundle\\Controller\\DefaultController::adminAction',  '_route' => 'Adminaff',);
+            }
+
+            // affichage
+            if ('/afficher' === $pathinfo) {
+                return array (  '_controller' => 'ProduitBundle\\Controller\\DefaultController::afficherProduitAction',  '_route' => 'affichage',);
+            }
+
+            if (0 === strpos($pathinfo, '/add')) {
+                // ajout_produit
+                if ('/add' === $pathinfo) {
+                    return array (  '_controller' => 'ProduitBundle\\Controller\\DefaultController::addAction',  '_route' => 'ajout_produit',);
+                }
+
+                // valide
+                if ('/add/valide' === $pathinfo) {
+                    return array (  '_controller' => 'ProduitBundle\\Controller\\DefaultController::valideAction',  '_route' => 'valide',);
+                }
+
+            }
+
+            // dashbord
+            if ('/admin' === $pathinfo) {
+                return array (  '_controller' => 'BaseBundle\\Controller\\DefaultController::dashAction',  '_route' => 'dashbord',);
+            }
+
+            // accessoire
+            if ('/acc' === $pathinfo) {
+                return array (  '_controller' => 'ProduitBundle\\Controller\\DefaultController::accessoireAction',  '_route' => 'accessoire',);
+            }
+
+            // alimentation
+            if ('/ali' === $pathinfo) {
+                return array (  '_controller' => 'ProduitBundle\\Controller\\DefaultController::alimentAction',  '_route' => 'alimentation',);
+            }
+
+            // autreProduit
+            if ('/autre' === $pathinfo) {
+                return array (  '_controller' => 'ProduitBundle\\Controller\\DefaultController::otherAction',  '_route' => 'autreProduit',);
+            }
+
+            if (0 === strpos($pathinfo, '/ajout')) {
+                // ajout_local
+                if ('/ajout' === $pathinfo) {
+                    return array (  '_controller' => 'LocalBundle\\Controller\\DefaultController::ajoutAction',  '_route' => 'ajout_local',);
+                }
+
+                // succes
+                if ('/ajout/succes' === $pathinfo) {
+                    return array (  '_controller' => 'LocalBundle\\Controller\\DefaultController::succesAction',  '_route' => 'succes',);
+                }
+
+            }
+
+        }
+
+        elseif (0 === strpos($pathinfo, '/p')) {
             if (0 === strpos($pathinfo, '/produits')) {
+                // supAdmin
+                if (0 === strpos($pathinfo, '/produits/sup') && preg_match('#^/produits/sup(?P<ref>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'supAdmin')), array (  '_controller' => 'ProduitBundle\\Controller\\DefaultController::supAdminAction',));
+                }
+
                 // tout_produit
                 if ('/produits' === $pathinfo) {
                     return array (  '_controller' => 'ProduitBundle\\Controller\\DefaultController::produitsAction',  '_route' => 'tout_produit',);
@@ -166,68 +230,22 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
             }
 
-            // payment_produit
-            if ('/payment' === $pathinfo) {
-                return array (  '_controller' => 'ProduitBundle\\Controller\\DefaultController::paymentAction',  '_route' => 'payment_produit',);
+            elseif (0 === strpos($pathinfo, '/payment')) {
+                // validePaeiment
+                if ('/payment/valide' === $pathinfo) {
+                    return array (  '_controller' => 'ProduitBundle\\Controller\\DefaultController::validePAction',  '_route' => 'validePaeiment',);
+                }
+
+                // payment_produit
+                if ('/payment' === $pathinfo) {
+                    return array (  '_controller' => 'ProduitBundle\\Controller\\DefaultController::paymentAction',  '_route' => 'payment_produit',);
+                }
+
             }
 
             // pdfProduit
             if ('/pdfProduit' === $pathinfo) {
                 return array (  '_controller' => 'ProduitBundle\\Controller\\DefaultController::pdfProdAction',  '_route' => 'pdfProduit',);
-            }
-
-        }
-
-        elseif (0 === strpos($pathinfo, '/a')) {
-            if (0 === strpos($pathinfo, '/add')) {
-                // ajout_produit
-                if ('/add' === $pathinfo) {
-                    return array (  '_controller' => 'ProduitBundle\\Controller\\DefaultController::addAction',  '_route' => 'ajout_produit',);
-                }
-
-                // valide
-                if ('/add/valide' === $pathinfo) {
-                    return array (  '_controller' => 'ProduitBundle\\Controller\\DefaultController::valideAction',  '_route' => 'valide',);
-                }
-
-            }
-
-            // dashbord
-            if ('/admin' === $pathinfo) {
-                return array (  '_controller' => 'BaseBundle\\Controller\\DefaultController::dashAction',  '_route' => 'dashbord',);
-            }
-
-            // affichage
-            if ('/afficher' === $pathinfo) {
-                return array (  '_controller' => 'ProduitBundle\\Controller\\DefaultController::afficherProduitAction',  '_route' => 'affichage',);
-            }
-
-            // accessoire
-            if ('/acc' === $pathinfo) {
-                return array (  '_controller' => 'ProduitBundle\\Controller\\DefaultController::accessoireAction',  '_route' => 'accessoire',);
-            }
-
-            // alimentation
-            if ('/ali' === $pathinfo) {
-                return array (  '_controller' => 'ProduitBundle\\Controller\\DefaultController::alimentAction',  '_route' => 'alimentation',);
-            }
-
-            // autreProduit
-            if ('/autre' === $pathinfo) {
-                return array (  '_controller' => 'ProduitBundle\\Controller\\DefaultController::otherAction',  '_route' => 'autreProduit',);
-            }
-
-            if (0 === strpos($pathinfo, '/ajout')) {
-                // ajout_local
-                if ('/ajout' === $pathinfo) {
-                    return array (  '_controller' => 'LocalBundle\\Controller\\DefaultController::ajoutAction',  '_route' => 'ajout_local',);
-                }
-
-                // succes
-                if ('/ajout/succes' === $pathinfo) {
-                    return array (  '_controller' => 'LocalBundle\\Controller\\DefaultController::succesAction',  '_route' => 'succes',);
-                }
-
             }
 
         }

@@ -63,8 +63,8 @@
 {% block container %}
 
     <ol class="breadcrumb">
-        <li><a href="{{ path('local_homepage') }}">Home</a></li>
-        <li class="active" >My Products</li>
+        <li><a href="{{ path('local_homepage') }}">Accueil</a></li>
+        <li class="active" >Mes produits</li>
 
     </ol>
     <h2> Tous mes Produits</h2>
@@ -77,7 +77,7 @@
         <ul class="dropdown-menu pull-right">
 
             <li>
-                <a href="{{ path('pdfProduit') }}"> Save as PDF </a>
+                <a href="{{ path('pdfProduit') }}"> Sauvgarder comme PDF </a>
             </li>
 
         </ul>
@@ -93,13 +93,13 @@
     <table  id="myTable" class="table table-hover" align="center">
         <tr>
             {#<th>Reference</th>#}
-            <th>ProductName</th>
-            <th>Price</th>
+            <th>NomProduit</th>
+            <th>Prix</th>
 
-            <th>Picture</th>
-            <th>Quantity</th>
+            <th>Image</th>
+            <th>Quantité</th>
             <th>Description</th>
-            <th>Saler</th>
+            <th>Vendeur</th>
             <th>Type</th>
 <th>Action</th>
 
@@ -110,7 +110,7 @@
                 {#<td>{{ produit.ref }}</td>#}
                 <td>{{ produit.nomp }}</td>
                 <td>{{ produit.prix }}</td>
-                <td>{{ produit.img }}</td>
+                <td> <img src="{{ asset('uploads/images/' ~ produit.img) }}" style="width:270px;height:220px;"></td>
                 <td>{{ produit.quantit}}</td>
                 <td>{{ produit.descrip }}</td>
                 <td>{{ produit.prop }}</td>

@@ -40,7 +40,7 @@
                             <figure>
                                 <a href="{{ path('detailProduit',{'ref':produit.ref}) }}">
                                     <div class="grid-img">
-                                        <img  src="{{ asset( 'ProduitImages/' ~ produit.img) }}" class="img-responsive" alt="">
+                                        <img  src="{{ asset( 'uploads/images/' ~ produit.img) }}" class="img-responsive" alt="">
                                     </div>
 
 
@@ -55,7 +55,7 @@
                             <h6><a href="{{ path('detailProduit',{'ref':produit.ref}) }}">{{ produit.nomp }}</a></h6>
                             <p ><em class="item_price">{{ produit.prix }} </em></p>
 
-                            <a href="#" data-text="Add to chart" class="my-cart-b">ajouter au panier</a>
+                            <a href="#" data-text="Add to chart" class="my-cart-b">Ajouter au panier</a>
                         </div>
                     </div>
 
@@ -67,7 +67,9 @@
 
 
 
-
+    <div class="navigation" align="center">
+        {{ knp_pagination_render(produit) }}
+    </div>
 
 
 
